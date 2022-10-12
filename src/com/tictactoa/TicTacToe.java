@@ -59,9 +59,21 @@ public class TicTacToe {
 	            return false;
 	        }
 	    }
+	    public static void checkToss() {
+	    	Random random = new Random();
+	        int tossResult = random.nextInt(2)+1;
+	        System.out.println("\nChoose 1 for Heads or 2 for Tails");
+	        int coinSelect = scannerObject.nextInt();
+	        if (coinSelect == tossResult) {
+	            System.out.println("\nPlayer Won The Toss! Player Starts");
+	        } else {
+	            System.out.println("\nComputer Won The Toss! Computer Starts");
+	        }
+	    }
 	    public static void main(String[] args)
 	    {
 	        System.out.println("----- Welcome To The Game Of Tic Tac Toe -----");
+	        checkToss();
 	        createBoard();
 	        getPlayerChoice();
 	        showBoard();
