@@ -21,7 +21,7 @@ public class TicTacToe {
 	    {
 
 	        System.out.print("select X or O : ");
-	        player = scannerObject.next().toUpperCase().charAt(0);
+	        player = Character.toUpperCase(scannerObject.next().charAt(0));
 
 	        if (player == 'X')
 	            computer = 'O';
@@ -52,15 +52,20 @@ public class TicTacToe {
 	            System.out.println("Invalid Choice");
 	        }
 	    }
-
+	    public static boolean isEmpty() {
+	        if (board[playLocation] == ' ') {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    }
 	    public static void main(String[] args)
 	    {
-
 	        System.out.println("----- Welcome To The Game Of Tic Tac Toe -----");
 	        createBoard();
 	        getPlayerChoice();
 	        showBoard();
 	        userMove();
-
+	        isEmpty();
 	    }
 }
